@@ -12,8 +12,8 @@ def create_invoice(request):
             return redirect('invoice_list')
     else:
         form = InvoiceForm()
-    return render(request, 'invoices/invoice_form.html', {'form': form})
+    return render(request, 'ecommerce_app/invoices/templates/invoices/invoice_form.html', {'form': form})
 
 def invoice_list(request):
     invoices = Invoice.objects.all()
-    return render(request, 'invoices/invoice_list.html', {'invoices': invoices})
+    return render(request, 'ecommerce_app/invoices/templates/invoices/invoice_list.html', {'invoices': invoices})
